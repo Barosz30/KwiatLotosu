@@ -1,26 +1,192 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
+/* 2. Definicja Twojego systemu designu (zmienne CSS) w warstwie 'base'. */
+@layer base {
+  /* Zmienne dla motywu jasnego */
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --background: hsl(35 30% 96%);
+    --foreground: hsl(280 30% 15%);
+
+    --card: hsl(0 0% 100%);
+    --card-foreground: hsl(280 30% 15%);
+
+    --popover: hsl(0 0% 100%);
+    --popover-foreground: hsl(280 30% 15%);
+
+    --primary: hsl(280 50% 45%);
+    --primary-foreground: hsl(0 0% 100%);
+
+    --secondary: hsl(40 40% 85%);
+    --secondary-foreground: hsl(280 30% 15%);
+
+    --muted: hsl(35 20% 90%);
+    --muted-foreground: hsl(280 15% 45%);
+
+    --accent: hsl(280 60% 65%);
+    --accent-foreground: hsl(0 0% 100%);
+
+    --destructive: hsl(0 84.2% 60.2%);
+    --destructive-foreground: hsl(0 0% 100%);
+
+    --border: hsl(280 20% 85%);
+    --input: hsl(280 20% 85%);
+    --ring: hsl(280 50% 45%);
+
+    --radius: 1rem;
+
+    --gradient-hero: linear-gradient(135deg, hsl(280 60% 55%) 0%, hsl(290 70% 65%) 50%, hsl(300 60% 75%) 100%);
+    --gradient-card: linear-gradient(to bottom, hsl(0 0% 100%) 0%, hsl(280 30% 98%) 100%);
+    --shadow-soft: 0 4px 20px -2px hsl(280 40% 70% / 0.15);
+    --shadow-glow: 0 0 30px hsl(280 60% 65% / 0.2);
+    --transition-smooth: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+
+    --sidebar-background: hsl(0 0% 98%);
+    --sidebar-foreground: hsl(240 5.3% 26.1%);
+    --sidebar-primary: hsl(240 5.9% 10%);
+    --sidebar-primary-foreground: hsl(0 0% 98%);
+    --sidebar-accent: hsl(240 4.8% 95.9%);
+    --sidebar-accent-foreground: hsl(240 5.9% 10%);
+    --sidebar-border: hsl(220 13% 91%);
+    --sidebar-ring: hsl(217.2 91.2% 59.8%);
+  }
+
+  /* Zmienne dla motywu ciemnego */
+ .dark {
+    --background: hsl(280 40% 8%);
+    --foreground: hsl(280 10% 95%);
+
+    --card: hsl(280 35% 12%);
+    --card-foreground: hsl(280 10% 95%);
+
+    --popover: hsl(280 35% 12%);
+    --popover-foreground: hsl(280 10% 95%);
+
+    --primary: hsl(280 60% 65%);
+    --primary-foreground: hsl(0 0% 100%);
+
+    --secondary: hsl(280 30% 20%);
+    --secondary-foreground: hsl(280 10% 95%);
+
+    --muted: hsl(280 30% 20%);
+    --muted-foreground: hsl(280 15% 65%);
+
+    --accent: hsl(280 60% 55%);
+    --accent-foreground: hsl(0 0% 100%);
+
+    --destructive: hsl(0 62.8% 50%);
+    --destructive-foreground: hsl(0 0% 100%);
+
+    --border: hsl(280 30% 20%);
+    --input: hsl(280 30% 20%);
+    --ring: hsl(280 60% 65%);
+    --sidebar-background: hsl(240 5.9% 10%);
+    --sidebar-foreground: hsl(240 4.8% 95.9%);
+    --sidebar-primary: hsl(224.3 76.3% 48%);
+    --sidebar-primary-foreground: hsl(0 0% 100%);
+    --sidebar-accent: hsl(240 3.7% 15.9%);
+    --sidebar-accent-foreground: hsl(240 4.8% 95.9%);
+    --sidebar-border: hsl(240 3.7% 15.9%);
+    --sidebar-ring: hsl(217.2 91.2% 59.8%);
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+/* 3. Aplikowanie stylów bazowych do elementów HTML. */
+@layer base {
+  * {
+    /* Zamiast @apply border-border; */
+    border-color: hsl(var(--border));
+  }
+
+  body {
+    /* Zamiast @apply bg-background text-foreground; */
+    background-color: hsl(var(--background));
+    color: hsl(var(--foreground));
+    font-family: 'Open Sans', sans-serif;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Playfair Display', serif;
+  }
+}
+
+/* 4. Definicja własnych klas użytkowych w warstwie 'utilities'. */
+@layer utilities {
+ .gradient-hero {
+    background: var(--gradient-hero);
+  }
+
+ .gradient-card {
+    background: var(--gradient-card);
+  }
+
+ .shadow-soft {
+    box-shadow: var(--shadow-soft);
+  }
+
+ .shadow-glow {
+    box-shadow: var(--shadow-glow);
+  }
+
+ .transition-smooth {
+    transition: var(--transition-smooth);
+  }
+
+  @keyframes fade-in {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+ .animate-fade-in {
+    animation: fade-in 1s ease-out;
+  }
+}
+
+/* 5. Pozostałe, "zwykłe" klasy CSS ze starego projektu. */
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+.logo {
+  height: 6em;
+  padding: 1.5em;
+  will-change: filter;
+  transition: filter 300ms;
+}
+.logo:hover {
+  filter: drop-shadow(0 0 2em #646cffaa);
+}
+.logo.react:hover {
+  filter: drop-shadow(0 0 2em #61dafbaa);
+}
+
+@keyframes logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  a:nth-of-type(2).logo {
+    animation: logo-spin infinite 20s linear;
+  }
+}
+
+.card {
+  padding: 2em;
+}
+
+.read-the-docs {
+  color: #888;
 }
