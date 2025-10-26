@@ -1,5 +1,6 @@
 @import "tailwindcss";
 
+
 /* 2. Definicja Twojego systemu designu (zmienne CSS) w warstwie 'base'. */
 @layer base {
   /* Zmienne dla motywu jasnego */

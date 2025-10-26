@@ -1,23 +1,32 @@
-"use client";
+"use client"; // Dyrektywa jest potrzebna ze względu na onClick w przyciskach linków
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
 
+  // Funkcja pomocnicza do przewijania
+  const scrollToSection = (id: string) => {
+    document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
+  };
+
   return (
-    <footer className="bg-primary/5 border-t border-border/50 py-12 px-4">
+    // Zmieniono bg-primary/5 na bg-purple-50, border-border/50 na border-gray-200
+    <footer className="bg-purple-50 border-t border-gray-200 py-12 px-4">
       <div className="container mx-auto max-w-6xl">
         <div className="grid md:grid-cols-3 gap-8 mb-8">
           {/* Brand */}
           <div className="space-y-4">
             <div className="flex items-center gap-2">
-              <div className="w-10 h-10 rounded-full gradient-hero flex items-center justify-center">
+              {/* Zmieniono gradient-hero na konkretny gradient */}
+              <div className="w-10 h-10 rounded-full bg-gradient-to-r from-purple-600 to-pink-500 flex items-center justify-center">
                 <span className="text-xl">🪷</span>
               </div>
-              <span className="font-display font-bold text-xl text-foreground">
+              {/* Zmieniono text-foreground na text-gray-900 */}
+              <span className="font-display font-bold text-xl text-gray-900">
                 Kwiat Lotosu
               </span>
             </div>
-            <p className="text-muted-foreground text-sm">
+            {/* Zmieniono text-muted-foreground na text-gray-600 */}
+            <p className="text-gray-600 text-sm">
               Profesjonalny salon masażu prowadzony przez Beatę Drężek. Miejsce
               spokoju i harmonii dla Twojego ciała i ducha.
             </p>
@@ -25,54 +34,43 @@ const Footer = () => {
 
           {/* Quick Links */}
           <div className="space-y-4">
-            <h3 className="font-display font-semibold text-foreground">
+            {/* Zmieniono text-foreground na text-gray-900 */}
+            <h3 className="font-display font-semibold text-gray-900">
               Szybkie linki
             </h3>
             <ul className="space-y-2 text-sm">
               <li>
                 <button
-                  onClick={() =>
-                    document
-                      .getElementById("o-mnie")
-                      ?.scrollIntoView({ behavior: "smooth" })
-                  }
-                  className="text-muted-foreground hover:text-primary transition-smooth"
+                  onClick={() => scrollToSection("o-mnie")}
+                  // Zmieniono text-muted-foreground hover:text-primary transition-smooth na konkretne kolory i transition
+                  className="text-gray-600 hover:text-purple-700 transition cursor-pointer"
                 >
                   O mnie
                 </button>
               </li>
               <li>
                 <button
-                  onClick={() =>
-                    document
-                      .getElementById("oferta")
-                      ?.scrollIntoView({ behavior: "smooth" })
-                  }
-                  className="text-muted-foreground hover:text-primary transition-smooth"
+                  onClick={() => scrollToSection("oferta")}
+                  // Zmieniono text-muted-foreground hover:text-primary transition-smooth na konkretne kolory i transition
+                  className="text-gray-600 hover:text-purple-700 transition cursor-pointer"
                 >
                   Oferta
                 </button>
               </li>
               <li>
                 <button
-                  onClick={() =>
-                    document
-                      .getElementById("galeria")
-                      ?.scrollIntoView({ behavior: "smooth" })
-                  }
-                  className="text-muted-foreground hover:text-primary transition-smooth"
+                  onClick={() => scrollToSection("galeria")}
+                  // Zmieniono text-muted-foreground hover:text-primary transition-smooth na konkretne kolory i transition
+                  className="text-gray-600 hover:text-purple-700 transition cursor-pointer"
                 >
                   Galeria
                 </button>
               </li>
               <li>
                 <button
-                  onClick={() =>
-                    document
-                      .getElementById("kontakt")
-                      ?.scrollIntoView({ behavior: "smooth" })
-                  }
-                  className="text-muted-foreground hover:text-primary transition-smooth"
+                  onClick={() => scrollToSection("kontakt")}
+                  // Zmieniono text-muted-foreground hover:text-primary transition-smooth na konkretne kolory i transition
+                  className="text-gray-600 hover:text-purple-700 transition cursor-pointer"
                 >
                   Kontakt
                 </button>
@@ -82,15 +80,18 @@ const Footer = () => {
 
           {/* Contact Info */}
           <div className="space-y-4">
-            <h3 className="font-display font-semibold text-foreground">
+            {/* Zmieniono text-foreground na text-gray-900 */}
+            <h3 className="font-display font-semibold text-gray-900">
               Kontakt
             </h3>
-            <ul className="space-y-2 text-sm text-muted-foreground">
+            {/* Zmieniono text-muted-foreground na text-gray-600 */}
+            <ul className="space-y-2 text-sm text-gray-600">
               <li className="flex items-start gap-2">
                 <span>📞</span>
                 <a
                   href="tel:+48123456789"
-                  className="hover:text-primary transition-smooth"
+                  // Zmieniono hover:text-primary transition-smooth na konkretny kolor i transition
+                  className="hover:text-purple-700 transition"
                 >
                   +48 123 456 789
                 </a>
@@ -99,7 +100,8 @@ const Footer = () => {
                 <span>✉️</span>
                 <a
                   href="mailto:kontakt@kwiatlotosu.pl"
-                  className="hover:text-primary transition-smooth"
+                  // Zmieniono hover:text-primary transition-smooth na konkretny kolor i transition
+                  className="hover:text-purple-700 transition"
                 >
                   kontakt@kwiatlotosu.pl
                 </a>
@@ -113,7 +115,8 @@ const Footer = () => {
         </div>
 
         {/* Bottom Bar */}
-        <div className="pt-8 border-t border-border/50 text-center text-sm text-muted-foreground">
+        {/* Zmieniono border-border/50 na border-gray-200, text-muted-foreground na text-gray-500 */}
+        <div className="pt-8 border-t border-gray-200 text-center text-sm text-gray-500">
           <p>
             © {currentYear} Kwiat Lotosu - Salon Masażu. Wszelkie prawa
             zastrzeżone.
