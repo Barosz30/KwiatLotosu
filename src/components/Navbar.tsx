@@ -32,9 +32,7 @@ const Navbar = () => {
   return (
     <nav
       className={`fixed top-0 left-0 right-0 z-50 transition-smooth ${
-        isScrolled
-          ? "bg-card/95 backdrop-blur-md shadow-soft"
-          : "bg-transparent"
+        isScrolled ? "bg-white" : "bg-transparent"
       }`}
     >
       <div className="container mx-auto px-4">
@@ -55,16 +53,20 @@ const Navbar = () => {
           {/* Desktop Menu */}
           <div className="hidden md:flex items-center gap-8">
             {navItems.map((item) => (
-              <button
+              <a
                 key={item.id}
-                onClick={() => scrollToSection(item.id)}
-                className="text-foreground/70 hover:text-primary transition-smooth font-medium"
+                href={`#${item.id}`}
+                onClick={(e) => {
+                  e.preventDefault();
+                  scrollToSection(item.id);
+                }}
+                className="text-foreground/70 hover:text-primary transition-smooth font-medium cursor-pointer"
               >
                 {item.label}
-              </button>
+              </a>
             ))}
             <Button
-              className="gradient-hero text-white shadow-soft hover:shadow-glow transition-smooth"
+              className="gradient-hero text-white shadow-soft hover:shadow-glow transition-smooth cursor-pointer"
               onClick={() => scrollToSection("kontakt")}
             >
               Umów wizytę

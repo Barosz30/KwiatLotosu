@@ -1,3 +1,5 @@
+"use client";
+
 const Footer = () => {
   const currentYear = new Date().getFullYear();
 
@@ -16,42 +18,60 @@ const Footer = () => {
               </span>
             </div>
             <p className="text-muted-foreground text-sm">
-              Profesjonalny salon masażu prowadzony przez Beatę Drężek. 
-              Miejsce spokoju i harmonii dla Twojego ciała i ducha.
+              Profesjonalny salon masażu prowadzony przez Beatę Drężek. Miejsce
+              spokoju i harmonii dla Twojego ciała i ducha.
             </p>
           </div>
 
           {/* Quick Links */}
           <div className="space-y-4">
-            <h3 className="font-display font-semibold text-foreground">Szybkie linki</h3>
+            <h3 className="font-display font-semibold text-foreground">
+              Szybkie linki
+            </h3>
             <ul className="space-y-2 text-sm">
               <li>
-                <button 
-                  onClick={() => document.getElementById('o-mnie')?.scrollIntoView({ behavior: 'smooth' })}
+                <button
+                  onClick={() =>
+                    document
+                      .getElementById("o-mnie")
+                      ?.scrollIntoView({ behavior: "smooth" })
+                  }
                   className="text-muted-foreground hover:text-primary transition-smooth"
                 >
                   O mnie
                 </button>
               </li>
               <li>
-                <button 
-                  onClick={() => document.getElementById('oferta')?.scrollIntoView({ behavior: 'smooth' })}
+                <button
+                  onClick={() =>
+                    document
+                      .getElementById("oferta")
+                      ?.scrollIntoView({ behavior: "smooth" })
+                  }
                   className="text-muted-foreground hover:text-primary transition-smooth"
                 >
                   Oferta
                 </button>
               </li>
               <li>
-                <button 
-                  onClick={() => document.getElementById('galeria')?.scrollIntoView({ behavior: 'smooth' })}
+                <button
+                  onClick={() =>
+                    document
+                      .getElementById("galeria")
+                      ?.scrollIntoView({ behavior: "smooth" })
+                  }
                   className="text-muted-foreground hover:text-primary transition-smooth"
                 >
                   Galeria
                 </button>
               </li>
               <li>
-                <button 
-                  onClick={() => document.getElementById('kontakt')?.scrollIntoView({ behavior: 'smooth' })}
+                <button
+                  onClick={() =>
+                    document
+                      .getElementById("kontakt")
+                      ?.scrollIntoView({ behavior: "smooth" })
+                  }
                   className="text-muted-foreground hover:text-primary transition-smooth"
                 >
                   Kontakt
@@ -62,17 +82,25 @@ const Footer = () => {
 
           {/* Contact Info */}
           <div className="space-y-4">
-            <h3 className="font-display font-semibold text-foreground">Kontakt</h3>
+            <h3 className="font-display font-semibold text-foreground">
+              Kontakt
+            </h3>
             <ul className="space-y-2 text-sm text-muted-foreground">
               <li className="flex items-start gap-2">
                 <span>📞</span>
-                <a href="tel:+48123456789" className="hover:text-primary transition-smooth">
+                <a
+                  href="tel:+48123456789"
+                  className="hover:text-primary transition-smooth"
+                >
                   +48 123 456 789
                 </a>
               </li>
               <li className="flex items-start gap-2">
                 <span>✉️</span>
-                <a href="mailto:kontakt@kwiatlotosu.pl" className="hover:text-primary transition-smooth">
+                <a
+                  href="mailto:kontakt@kwiatlotosu.pl"
+                  className="hover:text-primary transition-smooth"
+                >
                   kontakt@kwiatlotosu.pl
                 </a>
               </li>
@@ -86,7 +114,10 @@ const Footer = () => {
 
         {/* Bottom Bar */}
         <div className="pt-8 border-t border-border/50 text-center text-sm text-muted-foreground">
-          <p>© {currentYear} Kwiat Lotosu - Salon Masażu. Wszelkie prawa zastrzeżone.</p>
+          <p>
+            © {currentYear} Kwiat Lotosu - Salon Masażu. Wszelkie prawa
+            zastrzeżone.
+          </p>
           <p className="mt-2">Beata Drężek</p>
         </div>
       </div>

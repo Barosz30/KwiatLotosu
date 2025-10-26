@@ -1,3 +1,5 @@
+"use client"; // <-- DODAJ TĘ LINIĘ NA SAMEJ GÓRZE
+
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 
@@ -28,21 +30,21 @@ const Contact = () => {
                 <h3 className="text-xl font-display font-semibold text-foreground mb-2">
                   Telefon
                 </h3>
-                <a 
-                  href="tel:+48123456789" 
+                <a
+                  href="tel:+48123456789"
                   className="text-lg text-primary hover:text-accent transition-smooth"
                 >
                   +48 123 456 789
                 </a>
               </div>
-              
+
               <div className="border-t border-border/50 pt-6">
                 <div className="text-4xl mb-4">✉️</div>
                 <h3 className="text-xl font-display font-semibold text-foreground mb-2">
                   Email
                 </h3>
-                <a 
-                  href="mailto:kontakt@kwiatlotosu.pl" 
+                <a
+                  href="mailto:kontakt@kwiatlotosu.pl"
                   className="text-lg text-primary hover:text-accent transition-smooth"
                 >
                   kontakt@kwiatlotosu.pl
@@ -60,11 +62,12 @@ const Contact = () => {
                   Adres
                 </h3>
                 <p className="text-muted-foreground">
-                  ul. Przykładowa 123<br />
+                  ul. Przykładowa 123
+                  <br />
                   00-001 Warszawa
                 </p>
               </div>
-              
+
               <div className="border-t border-border/50 pt-6">
                 <div className="text-4xl mb-4">🕐</div>
                 <h3 className="text-xl font-display font-semibold text-foreground mb-2">
@@ -88,12 +91,13 @@ const Contact = () => {
                 Gotowa/Gotowy na relaks?
               </h3>
               <p className="text-white/90 mb-6">
-                Zarezerwuj wizytę już dziś i doświadcz głębokiego relaksu w Kwiecie Lotosu
+                Zarezerwuj wizytę już dziś i doświadcz głębokiego relaksu w
+                Kwiecie Lotosu
               </p>
-              <Button 
+              <Button
                 size="lg"
                 className="bg-white text-primary hover:bg-white/90 transition-smooth px-8 py-6 text-lg font-semibold"
-                onClick={() => window.location.href = 'tel:+48123456789'}
+                onClick={() => (window.location.href = "tel:+48123456789")}
               >
                 Zadzwoń teraz
               </Button>
