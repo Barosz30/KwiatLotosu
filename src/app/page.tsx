@@ -1,10 +1,21 @@
-import About from "@/components/About";
-import Contact from "@/components/Contact";
+import dynamic from "next/dynamic";
+
 import Footer from "@/components/Footer";
-import Gallery from "@/components/Gallery";
 import Hero from "@/components/Hero";
 import Navbar from "@/components/Navbar";
-import Services from "@/components/Services";
+
+const About = dynamic(() => import("@/components/About"), {
+  loading: () => <p>Ładowanie sekcji O mnie...</p>, // Opcjonalny wskaźnik ładowania
+});
+const Services = dynamic(() => import("@/components/Services"), {
+  loading: () => <p>Ładowanie Oferty...</p>,
+});
+const Gallery = dynamic(() => import("@/components/Gallery"), {
+  loading: () => <p>Ładowanie Galerii...</p>,
+});
+const Contact = dynamic(() => import("@/components/Contact"), {
+  loading: () => <p>Ładowanie Kontaktu...</p>,
+});
 
 export default function Home() {
   return (
