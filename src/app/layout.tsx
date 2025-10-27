@@ -16,8 +16,9 @@ const playfairDisplay = Playfair_Display({
 });
 
 export const metadata: Metadata = {
-  title: "Kwiat Lotosu - Gabinet Masażu",
-  description: "Profesjonalne masaże i terapie relaksacyjne.",
+  title: "Kwiat Lotosu - Masaż Myszyniec | Region Ostrołęka, Olsztyn, Łomża",
+  description:
+    "Szukasz masażu w okolicach Ostrołęki, Olsztyna, Łomży lub Przasnysza? Odkryj gabinet Kwiat Lotosu w Myszyńcu. Profesjonalne terapie i relaks.",
 };
 
 export default function RootLayout({
